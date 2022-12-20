@@ -5,7 +5,8 @@
 #include "utils.h"
 
 int main(int argc, char *argv[]) {
-    Parser parser;
+    std::string config_file = argv[1];
+    Parser parser(config_file);
     parser.build();
     Camera camera(parser.W, parser.H, parser.fov, parser.pos, parser.lookat);
     

@@ -1,0 +1,75 @@
+IMAGE
+h 768
+w 1024
+spp 400
+
+CAMERA
+pos 50 52 300
+lookat 0.0 -0.05 -1.0
+fov 0.5235987
+
+SCENE 9
+Plane
+p 1 0 0
+n 1 0 0
+emission 0 0 0
+color 0.75 0.25 0.25
+material DIFFUSE
+
+Plane
+p 99 0 0
+n -1 0 0
+emission 0 0 0
+color 0.25 0.25 0.75
+material DIFFUSE
+
+Plane
+p 0 0 0
+n 0 0 1
+emission 0 0 0
+color 0.75 0.75 0.75
+material DIFFUSE
+
+Plane
+p 0 0 0
+n 0 1 0
+emission 0 0 0
+color 0.75 0.75 0.75
+material DIFFUSE
+
+Plane
+p 0 81.6 0
+n 0 -1 0
+emission 0 0 0
+color 0.25 0.75 0.25
+material DIFFUSE
+
+Sphere
+center 27 16.5 47
+radius 16.5
+emission 0 0 0
+color 0.999 0.999 0.999
+material SPECULAR
+
+Sphere
+center 73 16.5 78
+radius 16.5
+emission 0 0 0
+color 0.999 0.999 0.999
+material REFRACTIVE
+
+Sphere
+center 38 6 90
+radius 6
+emission 0 0 0
+color 0.88 0.58 0.82
+material DIFFUSE
+
+Sphere
+center 50 65.1 81.6
+radius 1.5
+emission 400 400 400
+color 0 0 0
+material DIFFUSE
+
+END
