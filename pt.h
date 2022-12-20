@@ -57,8 +57,6 @@ Vec3d path_tracing(Ray& r, int depth, unsigned short* Xi, Parser* p, int off) {
         return emission + multiple(diff_c, path_tracing(reflect_r, depth, Xi, p, 0)); // recursion
     }
     else if (material == DIFFUSE) {
-        double theta = 2 * M_PI * erand48(Xi);
-        double r2 = sqrt(erand48(Xi));
         // Next Event Estimation
         Vec3d nee(0.0, 0.0, 0.0);
         for (int i = 0; i < p->scene.size(); ++i) {
@@ -88,6 +86,8 @@ Vec3d path_tracing(Ray& r, int depth, unsigned short* Xi, Parser* p, int off) {
             }
         }
         // Indirect Illumination (from other object)
+        double theta = 2 * M_PI * erand48(Xi);
+        double r2 = sqrt(erand48(Xi));
         // set up coordinate (u, v, w)
         Vec3d w = nl;
         Vec3d tmp = fabs(w.x[0]) > 0.1 ? Vec3d(0.0, 1.0, 0.0) : Vec3d(1.0, 0.0, 0.0);
