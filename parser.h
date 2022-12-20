@@ -19,7 +19,7 @@ class Parser {
         Parser(std::string file) {config_file = file;}
         void build() {
             // build the scene from config file
-            std::ifstream conf_f(config_file);
+            std::ifstream conf_f(config_file.c_str()); // pre-C++11.
             std::string tmp;
             
             // parse config file
