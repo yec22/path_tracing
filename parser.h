@@ -19,13 +19,14 @@ class Parser {
         Parser(std::string file) {config_file = file;}
         void build() {
             // build the scene from config file
-            scene.push_back(new Sphere(Vec3d(1e5+1,40.8,81.6), 1e5, Vec3d(0.0,0.0,0.0), Vec3d(0.75,0.25,0.25), DIFFUSE));
-            scene.push_back(new Sphere(Vec3d(-1e5+99,40.8,81.6), 1e5, Vec3d(0.0,0.0,0.0), Vec3d(0.25,0.25,0.75), DIFFUSE));
-            scene.push_back(new Sphere(Vec3d(50,40.8,1e5), 1e5, Vec3d(0.0,0.0,0.0), Vec3d(0.75,0.75,0.75), DIFFUSE));
-            scene.push_back(new Sphere(Vec3d(50,1e5,81.6), 1e5, Vec3d(0.0,0.0,0.0), Vec3d(0.75,0.75,0.75), DIFFUSE));
-            scene.push_back(new Sphere(Vec3d(50,-1e5+81.6,81.6), 1e5, Vec3d(0.0,0.0,0.0), Vec3d(0.75,0.75,0.75), DIFFUSE));
+            scene.push_back(new Plane(Vec3d(1.0,0.0,0.0), Vec3d(1.0,0.0,0.0), Vec3d(0.0,0.0,0.0), Vec3d(0.75,0.25,0.25), DIFFUSE));
+            scene.push_back(new Plane(Vec3d(99.0,0.0,0.0), Vec3d(-1.0,0.0,0.0), Vec3d(0.0,0.0,0.0), Vec3d(0.25,0.25,0.75), DIFFUSE));
+            scene.push_back(new Plane(Vec3d(0.0,0.0,0.0), Vec3d(0.0,0.0,1.0), Vec3d(0.0,0.0,0.0), Vec3d(0.75,0.75,0.75), DIFFUSE));
+            scene.push_back(new Plane(Vec3d(0.0,0.0,0.0), Vec3d(0.0,1.0,0.0), Vec3d(0.0,0.0,0.0), Vec3d(0.75,0.75,0.75), DIFFUSE));
+            scene.push_back(new Plane(Vec3d(0.0,81.6,0.0), Vec3d(0.0,-1.0,0.0), Vec3d(0.0,0.0,0.0), Vec3d(0.25,0.75,0.25), DIFFUSE));
             scene.push_back(new Sphere(Vec3d(27,16.5,47), 16.5, Vec3d(0.0,0.0,0.0), Vec3d(1,1,1)*0.999, SPECULAR));
             scene.push_back(new Sphere(Vec3d(73,16.5,78), 16.5, Vec3d(0.0,0.0,0.0), Vec3d(1,1,1)*0.999, REFRACTIVE));
+            scene.push_back(new Sphere(Vec3d(38, 6, 90), 6, Vec3d(0.0,0.0,0.0), Vec3d(0.88,0.58,0.82), DIFFUSE));
             scene.push_back(new Sphere(Vec3d(50,81.6-16.5,81.6), 1.5, Vec3d(4,4,4)*100, Vec3d(0.0,0.0,0.0), DIFFUSE));
 
             W = 1024, H = 768;

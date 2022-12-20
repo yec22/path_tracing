@@ -14,6 +14,13 @@ inline bool intersect(Ray& r, double& dist, int& id, Parser* p) {
                 dist = t; id = i;
             }
         }
+        else if(p->scene[i]->type == PLANE){
+            Plane* pln = (Plane*)p->scene[i];
+            double t = pln->intersect(r);
+            if(t!=0 && t<dist) { // if hit, find nearest object
+                dist = t; id = i;
+            }
+        }
     }
     return dist < INF;
 }
@@ -36,6 +43,14 @@ Vec3d path_tracing(Ray& r, int depth, unsigned short* Xi, Parser* p, int off) {
             diff_c = sph->color;
             material = sph->material;
             emission = sph->emission;
+        }
+        else if(p->scene[id]->type == PLANE){
+            Plane* pln = (Plane*)p->scene[id];
+            pos = r.ori + r.dir * dist; // hit position
+            n = pln->normal;
+            diff_c = pln->color;
+            material = pln->material;
+            emission = pln->emission;
         }
     }
 
@@ -63,7 +78,7 @@ Vec3d path_tracing(Ray& r, int depth, unsigned short* Xi, Parser* p, int off) {
             // loop over every light sources
             if (p->scene[i]->emission.x[0] <= 0.0 && p->scene[i]->emission.x[1] <= 0.0 
                 && p->scene[i]->emission.x[2] <= 0.0) continue;
-            if (p->scene[i]->type == SPHERE) {
+            if (p->scene[i]->type == SPHERE) { // light source only support sphere (with limited radius)
                 Sphere* sph = (Sphere*)p->scene[i];
                 // set up coordinate (u, v, w)
                 Vec3d w = sph->center - pos;

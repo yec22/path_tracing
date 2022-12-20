@@ -53,3 +53,22 @@ class Sphere: public Base {
             else return 0.0;
         }
 };
+
+class Plane: public Base {
+    public:
+        Vec3d point;
+        Vec3d normal;
+
+        Plane(): Base() {}
+        Plane(Vec3d p_, Vec3d n_, Vec3d emi_, Vec3d col_, Material mat_): Base(emi_, col_, mat_, PLANE) {
+            point = p_; normal = normalize(n_);
+        }
+        double intersect(Ray& r) {
+            double a = dot(r.dir, normal);
+            if(a > 0.0) return 0.0; // backward
+            if(fabs(a) < EPS) return 0.0; // parallel
+            double t = dot((point - r.ori), normal) / a;
+            if (t >= 0.0) return t;
+            else return 0.0;
+        }
+};
