@@ -14,6 +14,7 @@ class Parser {
         Vec3d pos; // position
         Vec3d lookat; // camera lookat
         double fov; // vertical fov
+        double translate; // camera translate
 
         Parser() {}
         Parser(std::string file) {config_file = file;}
@@ -36,6 +37,7 @@ class Parser {
                     double u, v, w;
                     conf_f >> tmp; conf_f >> u >> v >> w; lookat = Vec3d(u, v, w);
                     conf_f >> tmp; conf_f >> fov;
+                    conf_f >> tmp; conf_f >> translate;
                 }
                 if(tmp == std::string("SCENE")) { // scene
                     int n; conf_f >> n;

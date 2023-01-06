@@ -1,0 +1,97 @@
+IMAGE
+h 768
+w 1024
+spp 400
+
+CAMERA
+pos 50 52 300
+lookat 0.0 -0.05 -1.0
+fov 0.5235987
+translate 0
+
+SCENE 12
+Sphere
+center -500 -50000 0
+radius 50000
+emission 0 0 0
+color 0.35 0.35 0.35
+material DIFFUSE
+
+Sphere
+center 8200 9200 -20000
+radius 2500
+emission 80 80 80
+color 0 0 0
+material DIFFUSE
+
+Sphere
+center 50 0 0
+radius 25000
+emission 0.00114 0.00133 0.00212
+color 0.000648 0.001152 0.003
+material DIFFUSE
+
+Sphere
+center -2000 1600 -10000
+radius 5
+emission 100 84.3 69.8
+color 0 0 0
+material DIFFUSE
+
+Sphere
+center 0 1800 -10000
+radius 5
+emission 100 85.1 71
+color 0 0 0
+material DIFFUSE
+
+Sphere
+center 3000 1500 -10000
+radius 5
+emission 67.1 78 100
+color 0 0 0
+material DIFFUSE
+
+Sphere
+center 27 0 47
+radius 16.5
+emission 0 0 0
+color 0.33 0.33 0.33
+material DIFFUSE
+
+Sphere
+center -1000 -300 -3000
+radius 500
+emission 0 0 0
+color 0.351 0.351 0.351
+material DIFFUSE
+
+Sphere
+center 0 -500 -3000
+radius 830
+emission 0 0 0
+color 0.354 0.354 0.354
+material DIFFUSE
+
+Sphere
+center 1000 -300 -3000
+radius 490
+emission 0 0 0
+color 0.352 0.352 0.352
+material DIFFUSE
+
+Sphere
+center 38.3137 0 58.3137
+radius 7
+emission 0 0 0
+color 0.33 0.33 0.33
+material DIFFUSE
+
+Sphere
+center 90 5 20
+radius 10
+emission 0 0 0
+color 0.99 0.99 0.99
+material REFRACTIVE
+
+END

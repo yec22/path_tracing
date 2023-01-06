@@ -1,0 +1,62 @@
+IMAGE
+h 768
+w 1024
+spp 400
+
+CAMERA
+pos 50 52 300
+lookat 0.0 -0.05 -1.0
+fov 0.5235987
+translate 140
+
+SCENE 7
+Sphere
+center 50 100 0
+radius 100000
+emission 3 3 3
+color 0 0 0
+material DIFFUSE
+
+Sphere
+center 50 -100129.282 0
+radius 100000
+emission 0 0 0
+color 0.1 0.1 0.1
+material DIFFUSE
+
+Sphere
+center 110 75.441 62
+radius 60
+emission 0 0 0
+color 0.999 0.2997 0.2997
+material SPECULAR
+
+Sphere
+center -10 75.441 62
+radius 60
+emission 0 0 0
+color 0.2997 0.999 0.2997
+material SPECULAR
+
+Sphere
+center 50 -28.482 62
+radius 60
+emission 0 0 0
+color 0.2997 0.2997 0.999
+material SPECULAR
+
+Sphere
+center 50 40.8 -7.282
+radius 60
+emission 0 0 0
+color 0.52947 0.52947 0.52947
+material SPECULAR
+
+Sphere
+center 50 40.8 131.282
+radius 60
+emission 0 0 0
+color 0.999 0.999 0.999
+material REFRACTIVE
+
+END

@@ -8,7 +8,7 @@ int main(int argc, char *argv[]) {
     std::string config_file = argv[1];
     Parser parser(config_file);
     parser.build();
-    Camera camera(parser.W, parser.H, parser.fov, parser.pos, parser.lookat);
+    Camera camera(parser.W, parser.H, parser.fov, parser.pos, parser.lookat, parser.translate);
     
     int w = parser.W, h = parser.H;
     int spp = parser.spp / 4; // 2x2 subpixel
@@ -35,7 +35,7 @@ int main(int argc, char *argv[]) {
                         Vec3d offset_x = camera.cam_x_axis * new_x;
                         Vec3d offset_y = camera.cam_y_axis * new_y;
                         Vec3d d = normalize(camera.lookat + offset_x + offset_y);
-                        Ray r = Ray(camera.pos, d);
+                        Ray r = Ray(camera.pos + d * camera.translate, d);
                         c = c + path_tracing(r, 0, Xi, &parser, 0) / spp;
                     }
                     rgb_map[y][x] = rgb_map[y][x] + Vec3d(clamp(c.x[0]), clamp(c.x[1]), clamp(c.x[2])) / 4;
