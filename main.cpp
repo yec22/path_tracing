@@ -25,7 +25,7 @@ int main(int argc, char *argv[]) {
             for(int sy = 0; sy < 2; ++sy) { // 2x2 subpixel rows
                 for (int sx = 0; sx < 2; ++sx) { // 2x2 subpixel cols
                     c = Vec3d(0.0, 0.0, 0.0);
-                    for (int s = 0; s < spp; ++s) { // spp
+                    for (int s = 0; s < spp; ++s) { // uniform sampling
                         double dx = erand48(Xi) - 0.5; // [-0.5, 0.5]
                         double dy = erand48(Xi) - 0.5; // [-0.5, 0.5]
                         double x_in_subpixel = x + (sx + 0.5) * 0.5 + dx * 0.5;
